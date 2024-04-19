@@ -10,46 +10,29 @@ using System.Windows.Forms;
 using System.Threading;
 using Project2MovieMate;
 using Microsoft.EntityFrameworkCore;
+using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 
 namespace WindowsFormsApp1
 {
-    public partial class MainForm : System.Windows.Forms.Form
+    public partial class MainForm : Form
     {
-
-        private MyDbContext dbContext;
         Thread th;
         Thread gh;
 
         public MainForm()
         {
+            MyDbContext dbContext = new MyDbContext();
+            dbContext.ApplicationContext();
             InitializeComponent();
-            try
-            {
-                dbContext = new MyDbContext();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error initializing DbContext: " + ex.Message);
-            }
+            
         }
 
        
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                dbContext = new MyDbContext();
-                var data = await dbContext.Persons.ToListAsync();
-
-                usersComboBox.DataSource = data;
-                usersComboBox.DisplayMember = "nickname";
-                usersComboBox.ValueMember = "nickname";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error initializing DbContext: " + ex.Message);
-            }
+            
 
         }
 
@@ -76,6 +59,15 @@ namespace WindowsFormsApp1
         public void open1(object obj)
         {
             Application.Run(new NewUserForm());
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            dataGridView1.Rows.Add(new object[]
+            {
+                
+            });
         }
     }
 }

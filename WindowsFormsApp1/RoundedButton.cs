@@ -35,7 +35,7 @@ namespace Project2MovieMate
             using (GraphicsPath GraphPath = GetRoundPath(Rect, 50))
             {
                 this.Region = new Region(GraphPath);
-                using (Pen pen = new Pen(Color.CadetBlue, 1.75f))
+                using (Pen pen = new Pen(Color.Black, 1.75f))
                 {
                     pen.Alignment = PenAlignment.Inset;
                     e.Graphics.DrawPath(pen, GraphPath);

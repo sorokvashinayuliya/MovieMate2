@@ -29,26 +29,19 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.usersComboBox = new System.Windows.Forms.ComboBox();
             this.newUserButton = new Project2MovieMate.RoundedButton();
             this.enterButton = new Project2MovieMate.RoundedButton();
             this.NicknameLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // usersComboBox
-            // 
-            this.usersComboBox.FormattingEnabled = true;
-            this.usersComboBox.Location = new System.Drawing.Point(508, 179);
-            this.usersComboBox.Name = "usersComboBox";
-            this.usersComboBox.Size = new System.Drawing.Size(206, 24);
-            this.usersComboBox.TabIndex = 2;
             // 
             // newUserButton
             // 
             this.newUserButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.newUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newUserButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.newUserButton.Location = new System.Drawing.Point(508, 344);
+            this.newUserButton.Location = new System.Drawing.Point(508, 383);
             this.newUserButton.Name = "newUserButton";
             this.newUserButton.Size = new System.Drawing.Size(206, 67);
             this.newUserButton.TabIndex = 4;
@@ -61,7 +54,7 @@ namespace WindowsFormsApp1
             this.enterButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.enterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.enterButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.enterButton.Location = new System.Drawing.Point(508, 254);
+            this.enterButton.Location = new System.Drawing.Point(508, 310);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(206, 67);
             this.enterButton.TabIndex = 3;
@@ -80,28 +73,40 @@ namespace WindowsFormsApp1
             this.NicknameLabel.TabIndex = 5;
             this.NicknameLabel.Text = "Nickname";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(477, 116);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(271, 188);
+            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.NicknameLabel);
             this.Controls.Add(this.newUserButton);
             this.Controls.Add(this.enterButton);
-            this.Controls.Add(this.usersComboBox);
             this.Name = "MainForm";
             this.Text = "MovieMate";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox usersComboBox;
         private Project2MovieMate.RoundedButton enterButton;
         private Project2MovieMate.RoundedButton newUserButton;
         private System.Windows.Forms.Label NicknameLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

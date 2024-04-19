@@ -7,12 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Project2MovieMate
 {
-    class MyDbContext: DbContext
+    internal class MyDbContext: DbContext
     {
         public DbSet<Person> Persons { get; set; }
+        public void ApplicationContext() => Database.EnsureCreated();
         protected override void OnConfiguring(DbContextOptionsBuilder options) 
         {
-            options.UseSqlite("Data Source=movieDB.db");
+            options.UseSqlite("Data Source=movies.db");
         }
     }
 }
